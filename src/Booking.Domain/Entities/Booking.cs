@@ -1,9 +1,10 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using Booking.Domain.Values;
+using Framework;
 
 namespace Booking.Domain.Entities
 {
-    public class Booking
+    public class Booking : Entity<BookingId>
     {
         // Value
         private BookingEnd _bookingEnd;
@@ -45,6 +46,16 @@ namespace Booking.Domain.Entities
         public void UpdateBookingEnd(BookingEnd bookingEnd)
         {
             _bookingEnd = bookingEnd;
+        }
+
+        protected override void When(object @event)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        protected override void EnsureValidState()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
